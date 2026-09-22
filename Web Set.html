@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Menna | Developer Portfolio</title>
+    <meta name="description" content="Menna - Developer Portfolio Website. Responsive portfolio template for freelancers and developers.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3EM%3C/text%3E%3C/svg%3E">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    :root {
+        --bg: #070b14;
+        --bg-secondary: #0d1322;
+        --card: rgba(17, 25, 40, 0.75);
+        --border: rgba(148, 163, 184, 0.15);
+        --primary: #38bdf8;
+        --primary-dark: #0ea5e9;
+        --secondary: #818cf8;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --muted-light: #cbd5e1;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+            radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.10), transparent 30%),
+            radial-gradient(circle at 90% 20%, rgba(129, 140, 248, 0.10), transparent 30%),
+            var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(7, 11, 20, 0.78);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+        max-width: 1150px;
+        height: 75px;
+        margin: auto;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    nav ul li a {
+        color: var(--muted-light);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: var(--primary);
+    }
+
+    /* ================= COMMON ================= */
+
+    .container {
+        max-width: 1150px;
+        margin: auto;
+        padding: 0 25px;
+    }
+
+    section {
+        padding: 110px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .section-title .label {
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .section-title h2 span {
+        color: var(--primary);
+    }
+
+    .section-title p {
+        color: var(--muted);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+        min-height: 100vh;
+        padding-top: 150px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 1150px;
+        width: 100%;
+        margin: auto;
+        padding: 0 25px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        background: rgba(56, 189, 248, 0.07);
+        color: var(--primary);
+        border-radius: 50px;
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .hero-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 12px #22c55e;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 6vw, 72px);
+        line-height: 1.05;
+        letter-spacing: -3px;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        background: linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        color: var(--muted-light);
+        font-size: 18px;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 23px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        transition: 0.3s ease;
+    }
+
+    .btn-primary {
+        color: #06111a;
+        background: linear-gradient(
+            135deg,
+            var(--primary),
+            #67e8f9
+        );
+        box-shadow: 0 10px 30px rgba(56, 189, 248, 0.18);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(56, 189, 248, 0.28);
+    }
+
+    .btn-secondary {
+        color: var(--text);
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: translateY(-3px);
+    }
+
+    /* ================= HERO IMAGE ================= */
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .hero-image::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: var(--primary);
+        filter: blur(100px);
+        opacity: 0.12;
+        z-index: -1;
+    }
+
+    .image-wrapper {
+        width: 330px;
+        height: 330px;
+        padding: 8px;
+        border-radius: 50%;
+        background: linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary),
+            transparent
+        );
+        box-shadow: 0 0 80px rgba(56, 189, 248, 0.15);
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 7px solid var(--bg);
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .about-image {
+        position: relative;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 480px;
+        display: block;
+        border-radius: 22px;
+        border: 1px solid var(--border);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    }
+
+    .about-text h3 {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .about-text p {
+        color: var(--muted-light);
+        margin-bottom: 16px;
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .stat {
+        padding: 18px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+    }
+
+    .stat h4 {
+        color: var(--primary);
+        font-size: 25px;
+    }
+
+    .stat p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .skill-card {
+        padding: 30px 22px;
+        text-align: center;
+        background: linear-gradient(
+            145deg,
+            rgba(30,41,59,0.7),
+            rgba(15,23,42,0.8)
+        );
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        transition: 0.35s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(56,189,248,0.45);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    }
+
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background: rgba(56,189,248,0.08);
+        font-size: 30px;
+    }
+
+    .skill-card h3 {
+        margin-bottom: 8px;
+    }
+
+    .skill-card p {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .project-card {
+        background: rgba(15,23,42,0.75);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: 0.35s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(56,189,248,0.4);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    }
+
+    .project-image {
+        height: 220px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.07);
+    }
+
+    .project-content {
+        padding: 23px;
+    }
+
+    .project-tag {
+        display: inline-block;
+        color: var(--primary);
+        background: rgba(56,189,248,0.08);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .project-content h3 {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    .project-content p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .project-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-wrapper {
+        max-width: 750px;
+        margin: auto;
+        padding: 35px;
+        background: rgba(15,23,42,0.8);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+    }
+
+    .input-group {
+        margin-bottom: 18px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        width: 100%;
+        padding: 15px 17px;
+        color: white;
+        background: #080e1a;
+        border: 1px solid #263247;
+        border-radius: 10px;
+        outline: none;
+        font-family: inherit;
+        transition: 0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(56,189,248,0.08);
+    }
+
+    .input-group textarea {
+        height: 150px;
+        resize: vertical;
+    }
+
+    .send-btn {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(
+            135deg,
+            var(--primary),
+            #67e8f9
+        );
+        color: #06111a;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .send-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(56,189,248,0.2);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 30px 20px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    footer span {
+        color: var(--primary);
+    }
+
+    /* ================= PROJECT DETAILS ================= */
+
+    .portfolio-page {
+        display: none;
+        min-height: 100vh;
+        padding-top: 120px;
+    }
+
+    .portfolio-container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 25px 80px;
+    }
+
+    .back-button {
+        display: inline-flex;
+        margin-bottom: 35px;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .portfolio-title {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .portfolio-title h1 {
+        font-size: clamp(35px, 5vw, 55px);
+        margin-bottom: 10px;
+    }
+
+    .portfolio-title p {
+        color: var(--muted);
+    }
+
+    .portfolio-main-image {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 22px;
+        margin-bottom: 30px;
+        border: 1px solid var(--border);
+    }
+
+    .portfolio-content {
+        padding: 35px;
+        background: rgba(15,23,42,0.8);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+    }
+
+    .portfolio-content h2 {
+        color: var(--primary);
+        margin-bottom: 12px;
+        margin-top: 25px;
+    }
+
+    .portfolio-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .portfolio-content p {
+        color: var(--muted-light);
+        margin-bottom: 20px;
+    }
+
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .technology {
+        padding: 7px 13px;
+        border-radius: 30px;
+        border: 1px solid rgba(56,189,248,0.3);
+        color: var(--primary);
+        background: rgba(56,189,248,0.07);
+        font-size: 13px;
+    }
+
+    .portfolio-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-btn {
+        padding: 12px 20px;
+        border-radius: 9px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .live {
+        background: var(--primary);
+        color: #06111a;
+    }
+
+    .github {
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+        .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 50px;
+        }
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        nav {
+            padding: 0 15px;
+        }
+
+        nav ul {
+            gap: 12px;
+        }
+
+        nav ul li a {
+            font-size: 11px;
+        }
+
+        .logo {
+            font-size: 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+        }
+
+        .hero {
+            padding-top: 120px;
+        }
+
+        .hero h1 {
+            letter-spacing: -2px;
+        }
+
+        .image-wrapper {
+            width: 260px;
+            height: 260px;
+        }
+
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-wrapper,
+        .portfolio-content {
+            padding: 23px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header id="mainHeader">
+    <nav>
+        <div class="logo">
+            Menna<span>.</span>
+        </div>
+
+```
+    <ul>
+        <li><a href="#home" onclick="showHome()">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+```
+
+</header>
+
+<!-- ================= HOME ================= -->
+
+<main id="homePage">
+
+```
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <div class="hero-badge">
+                Available for opportunities
+            </div>
+
+            <h1>
+                Hi, I'm <span>Menna</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm a passionate Flutter Developer and Software
+                Engineering learner who enjoys building modern,
+                responsive and user-friendly digital experiences.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects →
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
+                    alt="Programming"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">About Me</div>
+
+            <h2>Get to know <span>me</span></h2>
+
+            <p>A little bit about my journey</p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                    alt="Coding workspace"
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>Software Engineering Learner 👩‍💻</h3>
+
+                <p>
+                    I'm interested in software engineering, web
+                    development and mobile application development.
+                </p>
+
+                <p>
+                    I enjoy learning new technologies and building
+                    practical projects that help me improve my
+                    programming and problem-solving skills.
+                </p>
+
+                <p>
+                    My goal is to become a professional developer
+                    and create useful, beautiful and accessible
+                    digital experiences.
+                </p>
+
+
+                <div class="about-stats">
+
+                    <div class="stat">
+                        <h4>3+</h4>
+                        <p>Projects</p>
+                    </div>
+
+                    <div class="stat">
+                        <h4>4</h4>
+                        <p>Core Skills</p>
+                    </div>
+
+                    <div class="stat">
+                        <h4>∞</h4>
+                        <p>Learning</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">My Skills</div>
+
+            <h2>Technologies I <span>Use</span></h2>
+
+            <p>Tools and technologies I'm currently learning</p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌐</div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    Creating structured and semantic web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🎨</div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    Designing modern and responsive interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⚡</div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Adding interactions and dynamic functionality.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📱</div>
+
+                <h3>Flutter</h3>
+
+                <p>
+                    Building cross-platform mobile applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">Portfolio</div>
+
+            <h2>Featured <span>Projects</span></h2>
+
+            <p>Some of the projects I've worked on</p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div
+                    class="project-image"
+                    onclick="showProject('shopping')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+                        alt="Shopping App"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        Flutter
+                    </span>
+
+                    <h3>Shopping App</h3>
+
+                    <p>
+                        A modern e-commerce application with
+                        products, cart and quantity management.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        onclick="showProject('shopping')"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div
+                    class="project-image"
+                    onclick="showProject('mobile')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80"
+                        alt="Mobile Application"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        Mobile App
+                    </span>
+
+                    <h3>Mobile Application</h3>
+
+                    <p>
+                        A clean and responsive mobile application
+                        designed for a smooth user experience.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        onclick="showProject('mobile')"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div
+                    class="project-image"
+                    onclick="showProject('website')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                        alt="Personal Website"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        Web Development
+                    </span>
+
+                    <h3>Personal Website</h3>
+
+                    <p>
+                        A professional portfolio website designed
+                        to showcase skills and projects.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        onclick="showProject('website')"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">Contact</div>
+
+            <h2>Let's <span>Connect</span></h2>
+
+            <p>Have a project or opportunity? Send me a message.</p>
+
+        </div>
+
+
+        <div class="contact-wrapper">
+
+            <form onsubmit="sendMessage(event)">
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <textarea
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    class="send-btn"
+                    type="submit"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>Menna Mohamed</span>.
+        All Rights Reserved.
+    </p>
+
+</footer>
+```
+
+</main>
+
+<!-- ================= PROJECT DETAILS ================= -->
+
+<section
+    id="portfolioPage"
+    class="portfolio-page"
+>
+
+```
+<div class="portfolio-container">
+
+    <a
+        class="back-button"
+        onclick="showHome()"
+    >
+        ← Back to Portfolio
+    </a>
+
+
+    <div class="portfolio-title">
+
+        <h1 id="portfolioTitle">
+            Project
+        </h1>
+
+        <p id="portfolioSubtitle">
+            Project Details
+        </p>
+
+    </div>
+
+
+    <img
+        id="portfolioImage"
+        class="portfolio-main-image"
+        src=""
+        alt="Project"
+    >
+
+
+    <div class="portfolio-content">
+
+        <h2>About This Project</h2>
+
+        <p id="portfolioDescription"></p>
+
+
+        <h2>Technologies</h2>
+
+        <div
+            id="technologies"
+            class="technologies"
+        ></div>
+
+
+        <h2>Project Features</h2>
+
+        <p id="portfolioFeatures"></p>
+
+
+        <div class="portfolio-buttons">
+
+            <a
+                href="#"
+                class="portfolio-btn live"
+                id="liveDemo"
+                target="_blank"
+            >
+                Live Demo
+            </a>
+
+            <a
+                href="#"
+                class="portfolio-btn github"
+                id="githubLink"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<script>
+
+    /* ================= PROJECT DATA ================= */
+
+    const projects = {
+
+        shopping: {
+
+            title: "Shopping App",
+
+            subtitle: "Modern E-Commerce Mobile Application",
+
+            image:
+                "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+
+            description:
+                "A modern shopping application designed to provide users with a simple and comfortable shopping experience. Users can browse products, add products to the cart and control product quantities.",
+
+            technologies: [
+                "Flutter",
+                "Dart",
+                "Material Design",
+                "ChangeNotifier"
+            ],
+
+            features:
+                "Product listing, product details, shopping cart, quantity controls, responsive user interface and clean navigation.",
+
+            live: "#",
+
+            github: "#"
+        },
+
+
+        mobile: {
+
+            title: "Mobile Application",
+
+            subtitle: "Modern Responsive Mobile App",
+
+            image:
+                "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80",
+
+            description:
+                "A mobile application focused on creating a clean, simple and user-friendly experience. The interface was designed to work smoothly across different screen sizes.",
+
+            technologies: [
+                "Flutter",
+                "Dart",
+                "UI/UX",
+                "Responsive Design"
+            ],
+
+            features:
+                "Modern interface, responsive layout, reusable components and smooth navigation between screens.",
+
+            live: "#",
+
+            github: "#"
+        },
+
+
+        website: {
+
+            title: "Personal Website",
+
+            subtitle: "Professional Developer Portfolio",
+
+            image:
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+
+            description:
+                "A professional personal portfolio website created to showcase programming skills, projects, experience and contact information.",
+
+            technologies: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Responsive Design"
+            ],
+
+            features:
+                "Responsive design, smooth navigation, project portfolio, skills section, about section and contact form.",
+
+            live: "#",
+
+            github: "#"
+        }
+
+    };
+
+
+    /* ================= SHOW PROJECT ================= */
+
+    function showProject(projectName) {
+
+        const project = projects[projectName];
+
+        if (!project) return;
+
+        document.getElementById("homePage").style.display = "none";
+
+        document.getElementById("mainHeader").style.display = "none";
+
+        document.getElementById("portfolioPage").style.display = "block";
+
+
+        document.getElementById("portfolioTitle").innerText =
+            project.title;
+
+        document.getElementById("portfolioSubtitle").innerText =
+            project.subtitle;
+
+        document.getElementById("portfolioImage").src =
+            project.image;
+
+        document.getElementById("portfolioDescription").innerText =
+            project.description;
+
+        document.getElementById("portfolioFeatures").innerText =
+            project.features;
+
+        document.getElementById("liveDemo").href =
+            project.live;
+
+        document.getElementById("githubLink").href =
+            project.github;
+
+
+        const technologies =
+            document.getElementById("technologies");
+
+        technologies.innerHTML = "";
+
+
+        project.technologies.forEach(function(technology) {
+
+            const span =
+                document.createElement("span");
+
+            span.className = "technology";
+
+            span.innerText = technology;
+
+            technologies.appendChild(span);
+
+        });
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* ================= BACK TO HOME ================= */
+
+    function showHome() {
+
+        document.getElementById("portfolioPage").style.display =
+            "none";
+
+        document.getElementById("homePage").style.display =
+            "block";
+
+        document.getElementById("mainHeader").style.display =
+            "block";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    function sendMessage(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const name = form.querySelector('input[type="text"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const message = form.querySelector('textarea').value.trim();
+
+        const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+
+        // Replace this address with your real email before publishing.
+        window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+    }
+
+</script>
+
+</body>
+</html>
